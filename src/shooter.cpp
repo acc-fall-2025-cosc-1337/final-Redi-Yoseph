@@ -1,4 +1,4 @@
-#include "shooter.h"
+//#include "shooter.h"
 #include <iostream>
 
 Roll* Shooter::throw_dice(Die& d1, Die& d2) {

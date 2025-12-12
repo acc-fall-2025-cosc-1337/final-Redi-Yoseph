@@ -1,4 +1,4 @@
-#ifndef COME_OUT_PHASE_H
+//#ifndef COME_OUT_PHASE_H
 #define COME_OUT_PHASE_H
 
 #include "phase.h"

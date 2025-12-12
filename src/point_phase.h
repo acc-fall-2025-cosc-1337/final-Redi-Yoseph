@@ -1,4 +1,4 @@
-#ifndef POINT_PHASE_H
+//#ifndef POINT_PHASE_H
 #define POINT_PHASE_H
 
 #include "phase.h"
