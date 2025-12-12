@@ -1,4 +1,4 @@
-//#ifndef ROLL_H
+#ifndef ROLL_H
 #define ROLL_H
 
 #include "die.h"

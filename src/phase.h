@@ -1,4 +1,4 @@
-//#ifndef PHASE_H
+#ifndef PHASE_H
 #define PHASE_H
 
 #include "roll.h"
