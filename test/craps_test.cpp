@@ -13,3 +13,15 @@ Die::Die() {
 int Die::roll() {
     return rand() % sides + 1;
 }
+TEST_CASE("Verify Roll produces 2–12")
+{
+    Die die1, die2;
+    Roll roll(die1, die2);
+
+    for (int i = 0; i < 10; i++) {
+        roll.roll_dice();
+        int value = roll.roll_value();
+        REQUIRE(value >= 2);
+        REQUIRE(value <= 12);
+    }
+}
