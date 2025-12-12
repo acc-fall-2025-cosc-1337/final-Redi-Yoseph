@@ -25,3 +25,15 @@ TEST_CASE("Verify Roll produces 2–12")
         REQUIRE(value <= 12);
     }
 }
+TEST_CASE("Shooter returns valid Roll values")
+{
+    Die die1, die2;
+    Shooter shooter;
+
+    for (int i = 0; i < 10; i++) {
+        Roll* r = shooter.throw_dice(die1, die2);
+        int value = r->roll_value();
+        REQUIRE(value >= 2);
+        REQUIRE(value <= 12);
+    }
+}
