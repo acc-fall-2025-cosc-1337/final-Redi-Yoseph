@@ -37,3 +37,44 @@ TEST_CASE("Shooter returns valid Roll values")
         REQUIRE(value <= 12);
     }
 }
+TEST_CASE("ComeOutPhase outcomes correct")
+{
+    ComeOutPhase phase;
+    Die d1, d2;
+
+    for (int i = 0; i < 10; i++) {
+        Roll* r = new Roll(d1, d2);
+        r->roll_dice();
+        int v = r->roll_value();
+
+        if (v == 7 || v == 11)
+            REQUIRE(phase.get_outcome(r) == RollOutcome::natural);
+        else if (v == 2 || v == 3 || v == 12)
+            REQUIRE(phase.get_outcome(r) == RollOutcome::craps);
+        else
+            REQUIRE(phase.get_outcome(r) == RollOutcome::point);
+
+        delete r;
+    }
+}
+TEST_CASE("PointPhase outcomes correct")
+{
+    Die d1, d2;
+    int point = 6;
+    PointPhase phase(point);
+
+    for (int i = 0; i < 10; i++) {
+        Roll* r = new Roll(d1, d2);
+        r->roll_dice();
+        int v = r->roll_value();
+
+        if (v == point)
+            REQUIRE(phase.get_outcome(r) == RollOutcome::point);
+        else if (v == 7)
+            REQUIRE(phase.get_outcome(r) == RollOutcome::seven_out);
+        else
+            REQUIRE(phase.get_outcome(r) == RollOutcome::nopoint);
+
+        delete r;
+    }
+}
