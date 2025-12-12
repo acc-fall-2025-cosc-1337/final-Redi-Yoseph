@@ -1,4 +1,4 @@
-//#ifndef SHOOTER_H
+#ifndef SHOOTER_H
 #define SHOOTER_H
 
 #include <vector>

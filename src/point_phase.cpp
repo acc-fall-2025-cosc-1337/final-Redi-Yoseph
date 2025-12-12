@@ -1,4 +1,4 @@
-//#include "point_phase.h"
+#include "point_phase.h"
 
 PointPhase::PointPhase(int p) : point(p) {}
 
